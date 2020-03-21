@@ -1,0 +1,64 @@
+html, body {
+   width: 100%;
+   height: 100%;
+   margin: 0px;
+   padding: 0px;
+   overflow: hidden; /* To make sure that scrollbars will be hidden */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+ /* === LEFT NAVIGATION MENU === */
+#left-menu {
+    border: 1px solid red;
+    position: absolute;
+    align-self: flex-start;
+    display: inline-block;
+    padding: 10px;
+}
+
+#left-menu span {
+    display: block;
+}
+/* === */
+
+ /* === RIGHT NAVIGATION MENU === */
+#right-menu {
+    border: 1px solid green;
+    position: absolute;
+    align-self: flex-end;
+    padding: 10px;
+}
+
+#right-menu span {
+    display: block;
+}
+/* === */
+
+/* === BOTTOM NAVIGATION MENU === */
+#bottom-menu {
+    border: 1px solid green;
+    position: absolute;
+    align-self: center;
+    justify-self: end;
+    margin-top: 45%;
+    padding: 10px;
+}
+
+/* === PROPERTIES POPUP ===*/
+#props-popup {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid white;
+    color : white;
+}
+/* === */
