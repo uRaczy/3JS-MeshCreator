@@ -15,6 +15,39 @@
         <span>🌈</span>
         <span>🌈</span>
     </nav>
+    <div id="props-popup">
+        <div id="addCubeMenu" hidden>
+            <p>Length</p>
+            <span>
+                <input type="text" class="rangeValue" disabled>
+                <input id="cubeLength" type="range" value="10" min="1" max="100">
+            </span>
+            <p>Height</p>
+            <span>
+                <input type="text" class="rangeValue" disabled>
+                <input id="cubeHeight" type="range" value="10" min="1" max="100">
+            </span>
+            <p>Width</p>
+            <span>
+                <input type="text" class="rangeValue" disabled>
+                <input id="cubeWidth" type="range" value="10" min="1" max="100">
+            </span>
+            <br>
+            <input type="button" class="confirmButton" value="Confirm">
+        </div>
+
+        <div id="addSphereMenu">
+            
+        </div>
+
+        <div id="addCylinderMenu">
+            
+        </div>
+
+        <div id="addConeMenu">
+            
+        </div>
+    </div>
     <nav id="right-menu">
         <span id="addCube">📦</span>
         <span id="addSphere">🌐</span>
@@ -25,8 +58,7 @@
         <span id="pereCamera">📷1</span>
         <span id="ortoCamera">📷2</span>
     </nav>
-    <div id="props-popup">
-    </div>
+
     <script type="module" src="./src/script.js"></script>
 </body>
 </html>

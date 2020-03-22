@@ -41,27 +41,21 @@ function onWindowResize() {
 // new Cube
 let objects = [];
 
+class Geometry {
+    
+}
 
 
 const geometryParameters = (type) => {
     const popupWindow = document.getElementById("props-popup");
 
-    const parametersObject = {
-        cube: {length: 10, width: 10, height: 10},
-        sphere: {radius: 10},
-        cylinder: {radiusTop: 5, radiusBottom: 5, height: 5, radialSegments: 4},
-        cone: {radius: 5, height: 5, radialSegments: 5}
-    }
+
 
     if (type === 'cube') {
-        let inputLength = document.createElement('input');
-        inputLength.type = 'range';
-        popupWindow.appendChild(inputLength);
-        let inputWidth = document.createElement('input');
-        let inputHeight = document.createElement('input');
+
     }
     else if (type === 'sphere') {
-        let inputRadius = document.createElement('input');
+
     }
     else if (type === 'cylinder') {
 
@@ -69,10 +63,7 @@ const geometryParameters = (type) => {
     else if (type === 'cone') {
 
     }
-    let submitButton = document.createElement('input');
-    submitButton.type = 'button';
-    submitButton.value = 'Confirm';
-    popupWindow.appendChild(submitButton);
+
 
     // submitButton.addEventListener('click', function(){
 
@@ -96,19 +87,72 @@ const geometryCreator = (type) => {
 }
 
 
+// Showing object properties popup after selecting object to create from right menu
 const addCube = document.getElementById("addCube");
 
-addCube.addEventListener('click', function(){
+addCube.addEventListener('click', ()=>{
+    const addCubeMenu = document.getElementById("addCubeMenu");
+    addCubeMenu.hidden = false;
     geometryCreator('cube');
-    // let geometry = new THREE.CubeGeometry(10,10,10);
-    // let material = new THREE.MeshBasicMaterial( { color: 0xff4000 } );
-    // let cube = new THREE.Mesh(geometry, material);
-    // objects.push(cube);
+
+    // Change it to create object and then modify this object via event listeners
+    let geometry = new THREE.CubeGeometry(10,10,10);
+    let material = new THREE.MeshBasicMaterial( { color: 0xff4000 } );
+    let cube = new THREE.Mesh(geometry, material);
+    objects.push(cube);
 });
+
+
+const confirmButtons = [];
+
+confirmButtons.push(document.getElementsByClassName("confirmButton")[0]);
+
+confirmButtons[0].addEventListener('click', () =>{
+    addCubeMenu.hidden = true;
+})
+
+
+// Event listeners in popup window for creating a cube
+const cubeValuesCounters = [];
+
+
+// Cube Length
+const cubeLength = document.getElementById("cubeLength");
+
+cubeValuesCounters.push(document.getElementsByClassName("rangeValue")[0]);
+cubeValuesCounters[0].value = cubeLength.value;
+
+cubeLength.addEventListener('change', function(){
+    cubeValuesCounters[0].value = cubeLength.value;
+})
+
+
+// Cube Height
+const cubeHeight = document.getElementById("cubeHeight");
+
+cubeValuesCounters.push(document.getElementsByClassName("rangeValue")[1]);
+cubeValuesCounters[1].value = cubeHeight.value;
+
+cubeHeight.addEventListener('change', function(){
+    cubeValuesCounters[1].value = cubeHeight.value;
+})
+
+
+// Cube Width
+const cubeWidth = document.getElementById("cubeWidth");
+
+cubeValuesCounters.push(document.getElementsByClassName("rangeValue")[2]);
+cubeValuesCounters[2].value = cubeWidth.value;
+
+cubeWidth.addEventListener('change', function(){
+    cubeValuesCounters[2].value = cubeWidth.value;
+})
+
+// ==========
 // new Sphere
 const addSphere = document.getElementById("addSphere");
 
-addSphere.addEventListener('click', function(){
+addSphere.addEventListener('click', () => {
     let geometry = new THREE.SphereGeometry(10, 50, 50);
     let material = new THREE.MeshBasicMaterial( { color: 0xff4000 } );
     let sphere = new THREE.Mesh(geometry, material);
@@ -117,7 +161,7 @@ addSphere.addEventListener('click', function(){
 // new Cylinder
 const addCylinder = document.getElementById("addCylinder");
 
-addCylinder.addEventListener('click', function(){
+addCylinder.addEventListener('click', () => {
     let geometry = new THREE.CylinderGeometry();
     let material = new THREE.MeshBasicMaterial( { color: 0xff4000 } );
     let cylinder = new THREE.Mesh(geometry, material);
@@ -126,18 +170,18 @@ addCylinder.addEventListener('click', function(){
 // new Cone
 const addCone = document.getElementById("addCone");
 
-addCone.addEventListener('click', function(){
+addCone.addEventListener('click', () => {
     let geometry = new THREE.ConeGeometry();
     let material = new THREE.MeshBasicMaterial( { color: 0xff4000 } );
     let cone = new THREE.Mesh(geometry, material);
     objects.push(cone);
 });
-
-// Bottom menu functionalities (Camera options)
+// ======
+//  BOTTOM MENU FUNCTIONALITIES (Camera options)
 // Switch to Perespective Camera
 const pereCamera = document.getElementById("pereCamera"); 
 
-pereCamera.addEventListener('click', function(){
+pereCamera.addEventListener('click', () => {
     console.log("viewSize: ", camera.viewSize);
     console.log("canvasWidth: ", canvasWidth);
 });
@@ -145,7 +189,7 @@ pereCamera.addEventListener('click', function(){
 // Switch to Ortographic Camera
 const ortoCamera = document.getElementById("ortoCamera"); 
 
-ortoCamera.addEventListener('click', function(){
+ortoCamera.addEventListener('click', () => {
 console.log(camera.rotation);
     const currentCameraPosition = { ...camera.position }; 
     const currentCameraRotation = { ...camera.rotation };
@@ -167,7 +211,10 @@ console.log(camera.rotation);
 // ANIMATE Function
 const animate = () => {
     controls.update();
-    scene.add( ...objects )
+    if(objects != null){
+        scene.add( ...objects )
+    }
+    
 	requestAnimationFrame( animate );
     renderer.render( scene, camera );
 }

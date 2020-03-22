@@ -54,11 +54,16 @@ body {
 /* === PROPERTIES POPUP ===*/
 #props-popup {
     position: absolute;
+    margin-left: 80%;
     align-self: center;
     justify-self: center;
     padding: 20px;
     text-align: center;
-    border: 1px solid white;
     color : white;
 }
-/* === */
+
+.rangeValue {
+    width: 20px;
+    text-align: center;
+    justify-self: center;
+}
