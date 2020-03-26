@@ -13,6 +13,12 @@ body {
     justify-content: center;
 }
 
+/* === OBJECTS LIST MENU === */
+#objects-list {
+    border: 1px solid blueviolet;
+    position: absolute;
+    align-self: flex-start;
+}
 
  /* === LEFT NAVIGATION MENU === */
 #left-menu {
