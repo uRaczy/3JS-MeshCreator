@@ -1,60 +1,96 @@
 html, body {
-   width: 100%;
-   height: 100%;
+   width: 100vw;
+   height: 100vh;
+   top: 0;
+   bottom: 0;
    margin: 0px;
    padding: 0px;
    overflow: hidden; /* To make sure that scrollbars will be hidden */
 }
 
-body {
+
+
+#CanvasContainer {
+    position: absolute;
+}
+
+#ui {    
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+}
+
+#mid-menu {
+    display: flex;
+    position: absolute;
+    align-self: center;
 }
 
 /* === OBJECTS LIST MENU === */
-#objects-list {
-    border: 1px solid blueviolet;
-    position: absolute;
+
+#left-menu {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    min-width: 15%;
     align-self: flex-start;
+
+}
+#objects-list {
+    height: 100%;
+    width: 80%;
+    padding: 10px;
+    border: 1px solid blueviolet;
+    align-self: flex-start;
+    text-align: center;
 }
 
  /* === LEFT NAVIGATION MENU === */
-#left-menu {
+#modify-menu {
     border: 1px solid red;
-    position: absolute;
-    align-self: flex-start;
-    display: inline-block;
-    padding: 10px;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
-#left-menu span {
+/* ??? */
+/* #left-menu span {
     display: block;
-}
+} */
 /* === */
 
  /* === RIGHT NAVIGATION MENU === */
 #right-menu {
     border: 1px solid green;
-    position: absolute;
-    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
     padding: 10px;
+    flex-direction: column;
+    justify-self: flex-end;
 }
 
-#right-menu span {
-    display: block;
-}
+
 /* === */
 
 /* === BOTTOM NAVIGATION MENU === */
 #bottom-menu {
-    border: 1px solid green;
+    border: 1px solid greenyellow;
     position: absolute;
     align-self: center;
-    justify-self: end;
-    margin-top: 45%;
-    padding: 10px;
+    justify-content: center;
+    align-items: flex-end;
+    display: flex;
+}
+
+
+.camera-icon  {
+    position: absolute;
 }
 
 /* === PROPERTIES POPUP ===*/
@@ -69,7 +105,7 @@ body {
 }
 
 .rangeValue {
-    width: 20px;
+    width: 40px;
     text-align: center;
     justify-self: center;
 }

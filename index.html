@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,61 +8,73 @@
     <title>ThreeJS Training</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
     <div id="CanvasContainer">
     </div>
-    <nav id="objects-list">
-        
-    </nav>
-    <nav id="left-menu">
-        <span>🌈</span>
-        <span>🌈</span>
-        <span>🌈</span>
-    </nav>
-    <div id="props-popup">
-        <div id="addCubeMenu" hidden>
-            <p>Length</p>
-            <span>
-                <input type="text" class="rangeValue" disabled>
-                <input id="cubeLength" type="range" value="10" min="1" max="100">
-            </span>
-            <p>Height</p>
-            <span>
-                <input type="text" class="rangeValue" disabled>
-                <input id="cubeHeight" type="range" value="10" min="1" max="100">
-            </span>
-            <p>Width</p>
-            <span>
-                <input type="text" class="rangeValue" disabled>
-                <input id="cubeWidth" type="range" value="10" min="1" max="100">
-            </span>
-            <br>
-            <input type="button" class="confirmButton" value="Hide">
+
+    <div id="ui">
+
+        <div id="left-menu">
+
+            <div id="objects-list">
+            </div>
+
+            <div id="modify-menu">
+                <span>🌈</span>
+                <span>🌈</span>
+                <span>🌈</span>
+            </div>
         </div>
 
-        <div id="addSphereMenu">
-            
+        <div id="mid-menu">
+            <div id="props-popup">
+                <div id="addCubeMenu" hidden>
+                    <p>Length</p>
+                    <span>
+                        <input type="text" class="rangeValue">
+                        <input id="cubeLength" type="range" value="10" min="1" max="100">
+                    </span>
+                    <p>Height</p>
+                    <span>
+                        <input type="text" class="rangeValue">
+                        <input id="cubeHeight" type="range" value="10" min="1" max="100">
+                    </span>
+                    <p>Width</p>
+                    <span>
+                        <input type="number" value="10" class="rangeValue">
+                        <input id="cubeWidth" type="range" value="10" min="1" max="100">
+                    </span>
+                    <br>
+                    <input type="button" class="confirmButton" value="Hide">
+                </div>
+    
+                <div id="addSphereMenu">
+                </div>
+    
+                <div id="addCylinderMenu">
+                </div>
+    
+                <div id="addConeMenu">
+                </div>
+            </div>
+            <div id="camera-menu">
+                <span id="pereCamera"><img class="camera-icon" src="./svg/Perespective-Camera.svg"
+                    alt="Perespective Camera" hidden></span>
+                <span id="ortoCamera"><img class="camera-icon" src="./svg/Ortographic-Camera.svg"
+                    alt="Ortographic Camera" hidden></span>
+            </div>
         </div>
 
-        <div id="addCylinderMenu">
-            
-        </div>
-
-        <div id="addConeMenu">
-            
+        <div id="right-menu">
+            <span id="addCube">📦</span>
+            <span id="addSphere">🌐</span>
+            <span id="addCylinder">🛢️</span>
+            <span id="addCone">🎉</span>
         </div>
     </div>
-    <nav id="right-menu">
-        <span id="addCube">📦</span>
-        <span id="addSphere">🌐</span>
-        <span id="addCylinder">🛢️</span>
-        <span id="addCone">🎉</span>
-    </nav>
-    <nav id="bottom-menu">
-        <span id="pereCamera">📷1</span>
-        <span id="ortoCamera">📷2</span>
-    </nav>
 
     <script type="module" src="./src/main.js"></script>
 </body>
+
 </html>
