@@ -41,6 +41,8 @@ html, body {
 #objects-list {
     height: 100%;
     width: 80%;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     border: 1px solid blueviolet;
     align-self: flex-start;
