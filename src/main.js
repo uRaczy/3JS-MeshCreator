@@ -3,6 +3,7 @@ import './modules/menus/manipulateObjects.js';
 import './modules/menus/makeObjects.js';
 import './modules/menus/changeObjects.js';
 import './modules/menus/camera.js';
+import './modules/menus/objectsList.js'
 
 
 

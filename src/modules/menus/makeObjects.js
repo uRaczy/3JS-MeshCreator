@@ -12,6 +12,11 @@ class newObj {
             this.type = type;
             this.position = [0,0,0];
     }
+    abandonShip() {
+        this.mesh.geometry.dispose();
+        this.mesh.material.dispose();
+        scene.remove(this.mesh);
+    }    
 }
 
 addCube.addEventListener('click', ()=>{
