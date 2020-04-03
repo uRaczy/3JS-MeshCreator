@@ -1,8 +1,20 @@
-import { objectSetup } from './changeObjects.js';
+import { resizeObj } from './resizeObject.js';
+import { moveObj } from './moveObject.js';
 import { scene } from '../setup.js';
 
 const listContainer = document.getElementById('objects-list');
+const container = document.getElementById('props-popup');
 
+// 2. ADD OBJECT TO LIST TO THE LEFT
+// Select object from the list to modify its values
+function modObj() {
+    container.hidden = false;
+    const uid = this.parentElement.id;
+    const object = scene.getObjectByProperty('uuid', uid);
+
+    resizeObj(object);
+    moveObj(object);
+}
 
 // Removing object from the list and from the scene
 function rmObj() {
@@ -15,16 +27,17 @@ function rmObj() {
 
     this.parentElement.remove(this);
 }
-// 2. ADD OBJECT TO LIST TO THE LEFT
+
 const btnSetup = (newObj) => {
     const newElement = document.createElement('span');
     newElement.className = "listElement";
     
     // span element gets id name based on uuid of object that's refering to on list
-    newElement.id = newObj.mesh.uuid;
+    newElement.id = newObj.uuid;
     const objBtn = document.createElement('input');
     objBtn.type = "button";
-    objBtn.value = String(newObj.type);
+    objBtn.onclick = modObj;
+    objBtn.value = String(newObj.geometry.type) + '-' + String(newObj.id);
     
     const deleteObj = document.createElement('input');
     deleteObj.type = "button";
@@ -39,8 +52,9 @@ const btnSetup = (newObj) => {
 
 
 
-export const objToArray = (newObj) => {
+export const objToList = (newObj) => {
     btnSetup(newObj);
 
-    objectSetup(newObj);
+    resizeObj(newObj);
+    moveObj(newObj);
 }
