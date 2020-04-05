@@ -6,7 +6,7 @@ import './modules/menus/camera.js';
 import './modules/menus/objectsList.js'
 import './modules/menus/moveObject.js';
 
-
+renderer.setClearColor( 0xd3d3d3, 1);
 // ANIMATE
 const animate = () => {
     controls.update();

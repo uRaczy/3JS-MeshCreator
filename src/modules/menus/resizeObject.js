@@ -2,18 +2,16 @@
 
 // 3. CHANGE OBJECT PROPERTIES
 // ========== CUBE ==========
-const cubePropsMenu = document.getElementById("cubePropsMenu");
+
 
 let currentObject;
 
 export const resizeObj = (object) => {
     currentObject = object;
 
+    
     if (object.geometry.type === 'BoxGeometry') {
-        cubePropsMenu.hidden = false;
-        spherePropsMenu.hidden = true;
-        cylinderPropsMenu.hidden = true;
-        conePropsMenu.hidden = true;
+        setupCube();
     }
     
     else if (object.geometry.type === 'SphereGeometry') {
@@ -37,41 +35,64 @@ export const resizeObj = (object) => {
 }
 
 // ======= CUBE PROPERTIES =======
-// Length - size X
-const cubeValuesCounters = [
+const cubePropsMenu = document.getElementById("cubePropsMenu");
+
+const cubeNumInput = [
     document.getElementsByClassName("rangeValue")[0],
     document.getElementsByClassName("rangeValue")[1],
-    document.getElementsByClassName("rangeValue")[2]];
+    document.getElementsByClassName("rangeValue")[2]
+];
+
+// Length - size X
 const setCubeLength = document.getElementById("cubeLength");
 
+cubeNumInput[0].addEventListener('input', () => {
+    currentObject.scale.x = cubeNumInput[0].value;
+    setCubeLength.value = cubeNumInput[0].value;
+})
 
-cubeValuesCounters[0].value = cubeLength.value;
-
-setCubeLength.addEventListener('input', function(){
-    cubeValuesCounters[0].value = cubeLength.value;
-    currentObject.scale.x = cubeLength.value;
+setCubeLength.addEventListener('input', () => {
+    currentObject.scale.x = setCubeLength.value;
+    cubeNumInput[0].value = setCubeLength.value;
 })
 
 // Height - size Y
-const cubeHeight = document.getElementById("cubeHeight");
+const setCubeHeight = document.getElementById("cubeHeight");
 
+cubeNumInput[1].addEventListener('input', function() {
+    currentObject.scale.y = cubeNumInput[1].value;
+    setCubeHeight.value = cubeNumInput[1].value;
+})
 
-cubeValuesCounters[1].value = cubeHeight.value;
-
-cubeHeight.addEventListener('input', function(){
-    cubeValuesCounters[1].value = cubeHeight.value;
-    currentObject.scale.y = cubeHeight.value;
+setCubeLength.addEventListener('input', function() {
+    cubeNumInput[1].value = setCubeHeight.value;
+    currentObject.scale.x = setCubeHeight.value;
 })
 
 // Width - size Z
-const cubeWidth = document.getElementById("cubeWidth");
+const setCubeWidth = document.getElementById("cubeWidth");
 
-cubeValuesCounters[2].value = cubeWidth.value;
+cubeNumInput[2].value = setCubeWidth.value;
 
-cubeWidth.addEventListener('input', function(){
-    cubeValuesCounters[2].value = cubeWidth.value;
-    currentObject.scale.z = cubeWidth.value;
+cubeWidth.addEventListener('input', function() {
+    cubeNumInput[2].value = setCubeWidth.value;
+    currentObject.scale.z = setCubeWidth.value;
 })
+
+
+function setupCube() {
+    cubePropsMenu.hidden = false;
+    spherePropsMenu.hidden = true;
+    cylinderPropsMenu.hidden = true;
+    conePropsMenu.hidden = true;
+
+    cubeNumInput[0].value = currentObject.scale.x;
+    cubeNumInput[1].value = currentObject.scale.y;
+    cubeNumInput[2].value = currentObject.scale.z;
+    setCubeLength.value = currentObject.scale.x;
+    setCubeHeight.value = currentObject.scale.y;
+    setCubeWidth.value = currentObject.scale.z;
+}
 // ======= ======= =======
 
 // ========== SPHERE PROPERTIES ==========
