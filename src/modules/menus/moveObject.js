@@ -36,13 +36,15 @@ moveZ.type = "number";
 axisZ.className = "moveInput";
 axisZ.append(titleZ, moveZ);
 
+const br = document.createElement('br');
 
 const hideBtn = document.createElement('input');
 hideBtn.type = "button";
+hideBtn.className = "hide-button";
 hideBtn.value = "Hide";
 hideBtn.onclick = hide;
 
-moveContainer.append(title, axisX, axisY, axisZ, hideBtn);
+moveContainer.append(title, axisX, axisY, axisZ, br, hideBtn);
 
 function hide() {
     moveContainer.hidden = true;

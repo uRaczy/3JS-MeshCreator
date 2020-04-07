@@ -19,41 +19,74 @@
 
             <div id="objects-list">
             </div>
+
+            <div id="icons-container">
+                <span class="icons" id="addCube">📦</span>
+                <span class="icons" id="addSphere">🌐</span>
+                <span class="icons" id="addCylinder">🛢️</span>
+                <span class="icons" id="addCone">🎉</span>
+            </div>
         </div>
 
-        <div id="mid-menu">
-            <div class="popups" id="move-popup">
-
+        <div id="mid-menu-top">
+            <div id='light-icons' class='horizontal-icons'>
+                <span class='icons' id='rgb-icon'>🟥🟩🟦</span>
             </div>
+            
+            <div id='light-popup' class='horizontal-popups'>
+                <span>
+                    🟥<input type='number' id='red-range' min='0' max='255' class='color-range'>
+                </span>
+                <span>
+                    🟩<input type='number' id='green-range' min='0' max='255' class='color-range'>
+                </span>
+                <span>
+                    🟦<input type='number' id='blue-range' min='0' max='255' class='color-range'>
+                </span>                
+            </div>
+        </div>
+
+        <div id="mid-menu-bottom">
+
+            <div id='camera-popups' class='horizontal-popups'></div>
+
+            <div id='camera-icons' class='horizontal-icons'>
+                <span class='icons' id='rotate-camera'>🔄</span>
+
+                <img id="pereCamera" class="camera-icon" src="./svg/Perespective-Camera.svg"
+                alt="Perespective Camera Icon" hidden>
+
+                <img id="ortoCamera" class="camera-icon" src="./svg/Ortographic-Camera.svg"
+                    alt="Ortographic Camera Icon" hidden>
+            </div>
+
+        </div>
+
+        <div id="right-menu">
             <div class="popups" id="props-popup" hidden>
                 <div id="cubePropsMenu" hidden>
                     <h2>Resize</h2>
                     <h3>Length</h3>
                     <span>
                         <input type="number" class="rangeValue">
-                        <input type="range" id="cubeLength" min="1" max="100">
                     </span>
                     <h3>Height</h3>
                     <span>
                         <input type="number" class="rangeValue">
-                        <input type="range" id="cubeHeight" min="1" max="100">
                     </span>
                     <h3>Width</h3>
                     <span>
-                        <input type="number" value="10" class="rangeValue">
-                        <input type="range" id="cubeWidth" min="1" max="100">
+                        <input type="number" class="rangeValue">
                     </span>
                     <br>
                 </div>
     
                 <div id="spherePropsMenu" hidden>
                     <h2>Resize</h2>
-                    <h3>Size</h3>
+                    <h3>Radius</h3>
                     <span>
                         <input type="number" class="rangeValue">
-                        <input id="sphereSize" type="range" value="10" min="1" max="100">
                     </span>
-                    <input type="button" class="confirmButton" value="Hide">
                 </div>
     
                 <div id="cylinderPropsMenu" hidden>
@@ -61,14 +94,11 @@
                     <h3>Height</h3>
                     <span>
                         <input type="number" class="rangeValue">
-                        <input id="cylinderHeight" type="range" value="10" min="1" max="100">
                     </span>
                     <h3>Width</h3>
                     <span>
                         <input type="number" class="rangeValue">
-                        <input id="cylinderWidth" type="range" value="10" min="1" max="100">
                     </span>
-                    <input type="button" class="confirmButton" value="Hide">
                 </div>
     
                 <div id="conePropsMenu" hidden>
@@ -83,22 +113,9 @@
                         <input type="number" class="rangeValue">
                         <input id="coneWidth" type="range" value="10" min="1" max="100">
                     </span>
-                    <input type="button" class="confirmButton" value="Hide">
+                    <br>
                 </div>
             </div>
-            <div id="camera-menu">
-                <span id="pereCamera"><img class="camera-icon" src="./svg/Perespective-Camera.svg"
-                    alt="Perespective Camera" hidden></span>
-                <span id="ortoCamera"><img class="camera-icon" src="./svg/Ortographic-Camera.svg"
-                    alt="Ortographic Camera" hidden></span>
-            </div>
-        </div>
-
-        <div id="right-menu">
-            <span class="Icons" id="addCube">📦</span>
-            <span class="Icons" id="addSphere">🌐</span>
-            <span class="Icons" id="addCylinder">🛢️</span>
-            <span class="Icons" id="addCone">🎉</span>
         </div>
     </div>
 

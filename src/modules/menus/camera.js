@@ -1,4 +1,15 @@
 import * as THREE from '../../../node_modules/three/build/three.module.js';
+import { controls } from '../setup.js';
+
+const cameraRotate = document.getElementById('rotate-camera');
+
+controls.autoRotate = true;
+controls.autoRotateSpeed = 1.5;
+
+cameraRotate.addEventListener('click', () => {
+    controls.autoRotate ? controls.autoRotate = false : controls.autoRotate = true;
+})
+
 
 // Switch to Perespective Camera [Left Button]
 const pereCamera = document.getElementById("pereCamera"); 
