@@ -12,15 +12,17 @@ export const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild(renderer.domElement);
 
-renderer.setClearColor( 0x000000, 1);
+
+// Background color
+renderer.setClearColor( 0xa0a0a0, 1);
 
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.BasicShadowMap;
 
 // Camera
-export const camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
+export const camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
 
-camera.position.set(0, 2, 20);
+camera.position.set(0, 400, 400);
 
 // CAMERA ORBIT CONTROLS AND RESIZE EVENT
 export const controls = new OrbitControls( camera, renderer.domElement);

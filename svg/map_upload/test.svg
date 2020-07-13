@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5444"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="test.svg">
+  <defs
+     id="defs5438" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="368.56189"
+     inkscape:cy="396.06334"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="563"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5441">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       y="159.46638"
+       x="117.061"
+       height="1.231319"
+       width="11.964344"
+       id="external-wall-7"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.06695785" />
+    <rect
+       y="159.58554"
+       x="129.02164"
+       height="0.97392452"
+       width="3.3816454"
+       id="window-5"
+       style="fill:#2ad4ff;fill-opacity:0.96208502;stroke:none;stroke-width:0.02770796" />
+    <rect
+       transform="rotate(-90)"
+       y="120.80698"
+       x="-156.96548"
+       height="0.97392452"
+       width="4.8774772"
+       id="door-3"
+       style="fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:0.03327638" />
+    <rect
+       transform="rotate(90)"
+       y="-121.9297"
+       x="156.96307"
+       height="1.231319"
+       width="2.512084"
+       id="internal-wall-5"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.03018922" />
+  </g>
+</svg>
